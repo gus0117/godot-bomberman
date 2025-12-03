@@ -180,3 +180,49 @@ frame_progress = 0.94676065
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_jegrx")
+
+[node name="Raycasts" type="Node2D" parent="."]
+
+[node name="Horizontal" type="Node2D" parent="Raycasts"]
+
+[node name="Left" type="Node2D" parent="Raycasts/Horizontal"]
+
+[node name="LeftHorizontalBottom" type="RayCast2D" parent="Raycasts/Horizontal/Left"]
+position = Vector2(-2, 6)
+target_position = Vector2(-2, 0)
+
+[node name="LeftHorizontalTop" type="RayCast2D" parent="Raycasts/Horizontal/Left"]
+position = Vector2(-2, -6)
+target_position = Vector2(-2, 0)
+
+[node name="Right" type="Node2D" parent="Raycasts/Horizontal"]
+
+[node name="RightHorizontalBottom" type="RayCast2D" parent="Raycasts/Horizontal/Right"]
+position = Vector2(2, 6)
+target_position = Vector2(2, 0)
+
+[node name="RightHorizontalTop" type="RayCast2D" parent="Raycasts/Horizontal/Right"]
+position = Vector2(2, -6)
+target_position = Vector2(2, 0)
+
+[node name="Vertical" type="Node2D" parent="Raycasts"]
+
+[node name="Top" type="Node2D" parent="Raycasts/Vertical"]
+
+[node name="TopVerticalRight" type="RayCast2D" parent="Raycasts/Vertical/Top"]
+position = Vector2(3, -6)
+target_position = Vector2(0, -2)
+
+[node name="TopVerticalLeft" type="RayCast2D" parent="Raycasts/Vertical/Top"]
+position = Vector2(-3, -6)
+target_position = Vector2(0, -2)
+
+[node name="Bottom" type="Node2D" parent="Raycasts/Vertical"]
+
+[node name="BottomVerticalRight" type="RayCast2D" parent="Raycasts/Vertical/Bottom"]
+position = Vector2(2, 6)
+target_position = Vector2(0, 2)
+
+[node name="BottomVerticalLeft" type="RayCast2D" parent="Raycasts/Vertical/Bottom"]
+position = Vector2(-2, 6)
+target_position = Vector2(0, 2)
