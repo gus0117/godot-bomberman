@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://bjb12njhlvby0"]
+[gd_scene load_steps=25 format=3 uid="uid://bjb12njhlvby0"]
 
 [ext_resource type="Script" uid="uid://caaehbethw3ga" path="res://Bomberman/Scenes/Player/player.gd" id="1_2yeq6"]
 [ext_resource type="Texture2D" uid="uid://cgisygjala5tc" path="res://Bomberman/Assets/Sprites.png" id="1_5k74m"]
+[ext_resource type="Script" uid="uid://bcrwfmbtjxl0d" path="res://Bomberman/Scenes/Player/raycasts.gd" id="3_l6sf3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2yeq6"]
 atlas = ExtResource("1_5k74m")
@@ -169,7 +170,7 @@ radius = 6.0
 height = 14.0
 
 [node name="Player" type="Area2D"]
-collision_mask = 2
+collision_mask = 14
 script = ExtResource("1_2yeq6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -182,6 +183,7 @@ frame_progress = 0.94676065
 shape = SubResource("CapsuleShape2D_jegrx")
 
 [node name="Raycasts" type="Node2D" parent="."]
+script = ExtResource("3_l6sf3")
 
 [node name="Horizontal" type="Node2D" parent="Raycasts"]
 
@@ -190,20 +192,24 @@ shape = SubResource("CapsuleShape2D_jegrx")
 [node name="LeftHorizontalBottom" type="RayCast2D" parent="Raycasts/Horizontal/Left"]
 position = Vector2(-2, 6)
 target_position = Vector2(-2, 0)
+collision_mask = 14
 
 [node name="LeftHorizontalTop" type="RayCast2D" parent="Raycasts/Horizontal/Left"]
 position = Vector2(-2, -6)
 target_position = Vector2(-2, 0)
+collision_mask = 14
 
 [node name="Right" type="Node2D" parent="Raycasts/Horizontal"]
 
 [node name="RightHorizontalBottom" type="RayCast2D" parent="Raycasts/Horizontal/Right"]
 position = Vector2(2, 6)
 target_position = Vector2(2, 0)
+collision_mask = 14
 
 [node name="RightHorizontalTop" type="RayCast2D" parent="Raycasts/Horizontal/Right"]
 position = Vector2(2, -6)
 target_position = Vector2(2, 0)
+collision_mask = 14
 
 [node name="Vertical" type="Node2D" parent="Raycasts"]
 
@@ -212,17 +218,21 @@ target_position = Vector2(2, 0)
 [node name="TopVerticalRight" type="RayCast2D" parent="Raycasts/Vertical/Top"]
 position = Vector2(3, -6)
 target_position = Vector2(0, -2)
+collision_mask = 14
 
 [node name="TopVerticalLeft" type="RayCast2D" parent="Raycasts/Vertical/Top"]
 position = Vector2(-3, -6)
 target_position = Vector2(0, -2)
+collision_mask = 14
 
 [node name="Bottom" type="Node2D" parent="Raycasts/Vertical"]
 
 [node name="BottomVerticalRight" type="RayCast2D" parent="Raycasts/Vertical/Bottom"]
 position = Vector2(2, 6)
 target_position = Vector2(0, 2)
+collision_mask = 14
 
 [node name="BottomVerticalLeft" type="RayCast2D" parent="Raycasts/Vertical/Bottom"]
 position = Vector2(-2, 6)
 target_position = Vector2(0, 2)
+collision_mask = 14
